@@ -5,19 +5,24 @@ portion of this project and you must now complete it. Before you can deliver it 
 fix all issues, test, add a few more features, and finally submit everything as a pull request to be reviewed
 by your coworker.
 
+![alt text](https://raw.githubusercontent.com/vincentjames501/angular-broken-todo-app/master/example.png)
+
 ## Instructions
 
 - Your new company uses github to manage its git repositories. Your coworker left the broken todo app at
-https://github.com/vincentjames501/angular-broken-todo-app . Clone the repository and create a branch 
+https://github.com/vincentjames501/angular-broken-todo-app. Clone the repository and create a branch 
 called `exercise`
 
 - After running the app for the first time, your boss noticed there is an issue: You can add a blank todo!
 Add a fix that prevents an empty todo from being submitted while also disabling the submit button until
-the field is valid. Your boss thinks the todo should be a minimum of 3 characters and a max of 64. Your 
-boss also likes each feature/fix to have an associated test case!
+the field is valid. Your boss also likes each feature/fix to have an associated test case!
 
-- Your boss now has tons of todos and they are getting difficult to manage. Your boss would like to be able
-to delete a todo and remove it from the list. Hint: 
+- As management typically does, they would now like the todo field to be a minimum of 3 characters and a max 
+of 64. Your coworker thinks it would be best to use one of Angular's form modules for form submission and 
+validation. 
+
+- After using your beautiful application for a few weeks, your boss now has tons of todos and they are getting 
+difficult to manage. Your boss would like to be able to delete a todo and remove it from the list. Hint: 
 
 ```angular2html
 <button mat-icon-button class="delete-button">
@@ -25,7 +30,7 @@ to delete a todo and remove it from the list. Hint:
 </button>
 ```
 
-- Wouldn't you know it; your boss want's another feature! Your boss would like to be able to see some 
+- Wouldn't you know it; your boss wants another feature! Your boss would like to be able to see some 
 statistics of the following when clicking the statistics menu item link:
 
   - Total number of todos (excluding deleted)

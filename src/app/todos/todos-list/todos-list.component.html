@@ -1,0 +1,20 @@
+<mat-card class="todo-card">
+  <div class="todo-input-wrapper">
+    <mat-form-field class="field">
+      <input #todoInput
+             matInput
+             (keyup.enter)="addNewTodo(todoInput.value)"
+             placeholder="What's on your todo list?">
+    </mat-form-field>
+    <button mat-mini-fab (click)="addNewTodo(todoInput.value)">
+      <i class="material-icons">add</i>
+    </button>
+  </div>
+  <mat-list>
+    <mat-list-item *ngFor="let todo of todos">
+      <mat-checkbox color='primary'>
+        {{todo}}
+      </mat-checkbox>
+    </mat-list-item>
+  </mat-list>
+</mat-card>

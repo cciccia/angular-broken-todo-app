@@ -4,6 +4,7 @@ import {TodosListComponent} from './todos-list.component';
 import {By} from '@angular/platform-browser';
 import {MaterialModule} from '../../material.module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 describe('TodosListComponent', () => {
   let component: TodosListComponent;
@@ -11,7 +12,7 @@ describe('TodosListComponent', () => {
 
   beforeEach(async(() =>
     TestBed.configureTestingModule({
-      imports: [BrowserAnimationsModule, MaterialModule],
+      imports: [BrowserAnimationsModule, MaterialModule, FormsModule, ReactiveFormsModule],
       declarations: [TodosListComponent]
     }).compileComponents()
   ));
@@ -27,7 +28,8 @@ describe('TodosListComponent', () => {
   });
 
   it('should render a list item for each default todo', async(() => {
-    const listItems = fixture.debugElement.queryAll(By.css('mat-list-item'))
+
+    const listItems = fixture.debugElement.queryAll(By.css('mat-list-item .todo-value'))
       .map(listItem => listItem.nativeElement.innerText.trim());
 
     expect(listItems).toEqual([
@@ -43,7 +45,7 @@ describe('TodosListComponent', () => {
 
     fixture.detectChanges();
 
-    const listItems = fixture.debugElement.queryAll(By.css('mat-list-item'))
+    const listItems = fixture.debugElement.queryAll(By.css('mat-list-item .todo-value'))
       .map(listItem => listItem.nativeElement.innerText.trim());
 
     expect(listItems).toEqual([
@@ -53,5 +55,17 @@ describe('TodosListComponent', () => {
       'Pick up the kids',
       'Test TODO'
     ]);
+  }));
+
+  it('should become invalid when todo field is of improper length', async(() => {
+    expect(component.todosForm.valid).toBeFalsy();
+    component.todosForm.controls['todo'].setValue('cool');
+    expect(component.todosForm.valid).toBeTruthy();
+    component.todosForm.controls['todo'].setValue('sd');
+    expect(component.todosForm.valid).toBeFalsy();
+    component.todosForm.controls['todo'].setValue(
+      'egforororoegforororoegforororoegforororoegforororoegforororgforororoegforororoegforororoegforororoegforororoegforororo'
+    );
+    expect(component.todosForm.valid).toBeFalsy();
   }));
 });

@@ -1,9 +1,11 @@
 # BrokenTodoApp
 
-Your boss has asked you to write a simple todo app using Angular 6. Your coworker has written the beginning
-portion of this project and you must now complete it. Before you can deliver it to your boss, you must first
-fix all issues, test, add a few more features, and finally submit everything as a pull request to be reviewed
-by your coworker.
+Your boss has asked you to write a simple todo app using Angular 6. This app allows you to add "todo" items
+as well as toggle the completed status for each individual todo.
+
+Your coworker has written the beginning portion of this project and you must now complete it.
+Before you can deliver it to your boss, you must first fix all issues, test, add a few more features,
+and finally submit everything as a pull request to be reviewed by your coworker.
 
 ![alt text](https://raw.githubusercontent.com/vincentjames501/angular-broken-todo-app/master/example.png)
 
@@ -36,11 +38,14 @@ statistics of the following when clicking the statistics menu item link:
   - Total number of todos (excluding deleted)
   - Total number of completed todos
   - Total number of incomplete todos
-  - Total number of deleted todos
 
 - Now that you're done, submit a pull request in Github into the master branch of this project!
 
 ## Running
+
+Make sure you have the angular cli installed:
+
+```npm install -g @angular/cli```
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
